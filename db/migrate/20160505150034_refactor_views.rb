@@ -186,7 +186,7 @@ SET STATEMENT_TIMEOUT TO 0;
 
       GRANT SELECT ON "1".finished_projects TO anonymous, web_user, admin;
 
-      DROP VIEW "1".project_details;
+      DROP VIEW "1".project_details CASCADE;
       CREATE OR REPLACE VIEW "1".project_details AS
         SELECT p.id AS project_id,
         p.id,
@@ -381,7 +381,7 @@ SET STATEMENT_TIMEOUT TO 0;
 
       GRANT SELECT ON "1".successful_projects TO anonymous, web_user, admin;
 
-      DROP FUNCTION mode(projects);
+      DROP FUNCTION mode(projects) CASCADE;
 
     SQL
   end
