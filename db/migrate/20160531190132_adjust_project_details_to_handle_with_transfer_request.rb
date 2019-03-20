@@ -1,6 +1,7 @@
 class AdjustProjectDetailsToHandleWithTransferRequest < ActiveRecord::Migration
   def up
     execute %{
+DROP VIEW "1"."project_details";
 CREATE OR REPLACE VIEW "1"."project_details" AS
  SELECT p.id AS project_id,
     p.id,
