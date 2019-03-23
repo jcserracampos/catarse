@@ -8,7 +8,7 @@ class UserObserver < ActiveRecord::Observer
   end
 
   def after_create(user)
-    user.notify(:new_user_registration)
+    #user.notify(:new_user_registration)
     if user.newsletter
       newsletter_list = MailMarketingList.find_by_list_id CatarseSettings[:sendgrid_newsletter_list_id]
       user.mail_marketing_users.create(

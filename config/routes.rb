@@ -164,21 +164,22 @@ Catarse::Application.routes.draw do
       end
     end
 
-    get '/terms-of-use' => redirect('https://crowdfunding.catarse.me/legal/termos-de-uso')
-    get '/privacy-policy' => redirect('https://crowdfunding.catarse.me/legal/politica-de-privacidade')
-    get '/start' => redirect('https://crowdfunding.catarse.me/comece')
-    get '/start-sub' => redirect('https://crowdfunding.catarse.me/comece')
+    #get '/terms-of-use' => redirect('https://crowdfunding.catarse.me/legal/termos-de-uso')
+    #get '/privacy-policy' => redirect('https://crowdfunding.catarse.me/legal/politica-de-privacidade')
+    get '/start' => 'high_voltage/pages#show', id: 'start'
+    get '/start-sub' => 'high_voltage/pages#show', id: 'start_sub'
+    #get '/start-sub' => redirect('https://crowdfunding.catarse.me/comece')
     get '/jobs' => 'high_voltage/pages#show', id: 'jobs'
-    get '/hello' => redirect('/start')
-    get '/press' => redirect('https://crowdfunding.catarse.me/imprensa')
-    get '/assets' => redirect('https://crowdfunding.catarse.me/assets')
-    get '/guides' => redirect('http://fazum.catarse.me/guia-financiamento-coletivo')
+    #get '/hello' => redirect('/start')
+    #get '/press' => redirect('https://crowdfunding.catarse.me/imprensa')
+    #get '/assets' => redirect('https://crowdfunding.catarse.me/assets')
+    #get '/guides' => redirect('http://fazum.catarse.me/guia-financiamento-coletivo')
     get '/new-admin' => 'high_voltage/pages#show', id: 'new_admin'
     get '/explore' => 'high_voltage/pages#show', id: 'explore'
-    get '/team' => redirect('https://crowdfunding.catarse.me/nosso-time')
-    get '/about' => redirect('https://crowdfunding.catarse.me/quem-somos')
-    get '/flex' => redirect('http://crowdfunding.catarse.me')
-    get '/projects_dashboard' => 'high_voltage/pages#show', id: 'projects_dashboard'
+    #get '/team' => redirect('https://crowdfunding.catarse.me/nosso-time')
+    #get '/about' => redirect('https://crowdfunding.catarse.me/quem-somos')
+    #get '/flex' => redirect('http://crowdfunding.catarse.me')
+    #get '/projects_dashboard' => 'high_voltage/pages#show', id: 'projects_dashboard'
 
     # Root path should be after channel constraints
     root to: 'projects#index'
